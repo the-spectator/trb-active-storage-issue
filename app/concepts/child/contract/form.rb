@@ -10,6 +10,8 @@ module Child::Contract
     # ActiveStorage has One Attached
     property :id_card_image, populator: :id_card_image_populator!
 
+    validates :name, :gender, :parent_id, :date_of_birth, presence: true
+
     def id_card_image_populator!(fragment:, model:, **)
       if fragment.is_a?(ActionDispatch::Http::UploadedFile) || fragment.is_a?(Rack::Test::UploadedFile)
         self.id_card_image = fragment
