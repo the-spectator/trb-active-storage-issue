@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module Child::Operation
-  class Update < Trailblazer::Operation
+  class Update < ApplicationOperation
     class Present < Trailblazer::Operation
       step Model(Child, :find_by)
-      step Contract::Build(constant: Parent::Contract::Form)
+      step Contract::Build(constant: Child::Contract::Form)
     end
 
     step Subprocess(Present), fast_track: true
