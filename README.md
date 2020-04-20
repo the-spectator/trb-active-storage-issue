@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Steps To Reproduce bugs:
 
-Things you may want to cover:
+* Setup rails project
+  * bundle install
+  * bin/rails db:setup
+  * bin/rails db:migrate
 
-* Ruby version
+* Run the rspec example
+  * bundle exec rspec spec/concepts/parent/operation/update_spec.rb
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* To enable Hack:
+  * uncomment step :clear_active_storage in app/concepts/parent/operation/update.rb
