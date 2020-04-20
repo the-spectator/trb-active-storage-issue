@@ -9,7 +9,7 @@ module Parent::Operation
 
     step Subprocess(Present), fast_track: true
     step Contract::Validate(key: :parent)
-    step :clear_active_storage
+    # step :clear_active_storage
     step Contract::Persist()
     fail :log_errors
 
@@ -19,12 +19,13 @@ module Parent::Operation
       ctx[:"contract.default"].children.each do |x|
         x.id_card_image = hack(x.id_card_image)
       end
+      true
     end
 
     def log_errors(ctx, **)
       contract = ctx[:"contract.default"]
       ctx[:errors] ||= []
-      ctx[:errors] << (contract.errors.full_messages || contract.model.errors)
+      ctx[:errors] << (contract.errors.full_messages || contract.model.errors).flatten
       true
     end
 
