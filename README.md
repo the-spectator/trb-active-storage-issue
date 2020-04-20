@@ -9,7 +9,7 @@ Steps To Reproduce bugs:
 
 * Run the rspec example
   * bundle exec rspec spec/concepts/child/operation/update_spec.rb (less complex)
-  * bundle exec rspec spec/concepts/parent/operation/update_spec.rb (litte complex)
+  * bundle exec rspec spec/concepts/parent/operation/update_spec.rb (litte more complex)
 
 * Hack:
   * Definition of hack is found in app/concepts/application_operation.rb
