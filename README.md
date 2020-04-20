@@ -12,5 +12,5 @@ Steps To Reproduce bugs:
   * bundle exec rspec spec/concepts/parent/operation/update_spec.rb (litte complex)
 
 * Hack:
-  * Defination of hack is found in app/concepts/application_operation.rb
+  * Definition of hack is found in app/concepts/application_operation.rb
   * To enable the hack => uncomment step :clear_active_storage in operations

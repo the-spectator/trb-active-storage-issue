@@ -9,7 +9,7 @@ RSpec.describe Child::Operation::Update do
   let(:base_params) {
     {
       id: child.id,
-      child: child.as_json(only: [:id, :gender, :name, :date_of_birth])
+      child: child.as_json(only: [:id, :gender, :name, :date_of_birth, :parent_id])
     }.with_indifferent_access
    }
 
