@@ -14,7 +14,7 @@ module Parent::Operation
     fail :log_errors
 
     def clear_active_storage(ctx, **)
-      ctx[:"contract.default"].profile_image = hack(ctx[:"contract.default"].profile_image)
+      # ctx[:"contract.default"].profile_image = hack(ctx[:"contract.default"].profile_image)
 
       ctx[:"contract.default"].children.each do |x|
         x.id_card_image = hack(x.id_card_image)

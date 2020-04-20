@@ -2,8 +2,7 @@
 require 'rails_helper'
 
 RSpec.describe Parent::Operation::Update do
-  let(:parent) { create(:parent) }
-  let(:children) { create_list(:child, 1, parent: parent) }
+  let(:parent) { create(:parent, children: create_list(:child, 1)) }
   let(:params) {
     {
       id: parent.id,

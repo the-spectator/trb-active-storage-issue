@@ -7,18 +7,18 @@ module Parent::Contract
     property :mobile_number
     property :date_of_birth
 
-    # ActiveStorage has One Attached
-    property :profile_image, populator: :profile_image_populator!
+    # # ActiveStorage has One Attached
+    # property :profile_image, populator: :profile_image_populator!
 
     validates :name, :gender, :mobile_number, :date_of_birth, presence: true
 
-    def profile_image_populator!(fragment:, model:, **)
-      if fragment.is_a?(ActionDispatch::Http::UploadedFile) || fragment.is_a?(Rack::Test::UploadedFile)
-        self.profile_image = fragment
-      else
-        skip!
-      end
-    end
+    # def profile_image_populator!(fragment:, model:, **)
+    #   if fragment.is_a?(ActionDispatch::Http::UploadedFile) || fragment.is_a?(Rack::Test::UploadedFile)
+    #     self.profile_image = fragment
+    #   else
+    #     skip!
+    #   end
+    # end
 
     collection :children, populator: :children_populator!, form: Child::Contract::Form
 
