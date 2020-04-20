@@ -8,8 +8,9 @@ Steps To Reproduce bugs:
   * bin/rails db:migrate
 
 * Run the rspec example
-  * bundle exec rspec spec/concepts/parent/operation/update_spec.rb
+  * bundle exec rspec spec/concepts/child/operation/update_spec.rb (less complex)
+  * bundle exec rspec spec/concepts/parent/operation/update_spec.rb (litte complex)
 
 * Hack:
   * Defination of hack is found in app/concepts/application_operation.rb
-  * To enable the hack => uncomment step :clear_active_storage in app/concepts/parent/operation/update.rb
+  * To enable the hack => uncomment step :clear_active_storage in operations
