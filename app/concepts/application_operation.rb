@@ -16,8 +16,9 @@ class ApplicationOperation < Trailblazer::Operation
       storage_object.blob
     elsif storage_object.is_a?(ActiveStorage::Attached::Many) && storage_object.attached?
       storage_object.blobs
-    elsif !storage_object.is_a?(ActionDispatch::Http::UploadedFile) && \
-      !storage_object.is_a?(Rack::Test::UploadedFile)
+    elsif storage_object.is_a?(ActionDispatch::Http::UploadedFile) || storage_object.is_a?(Rack::Test::UploadedFile)
+      storage_object
+    else
       nil
     end
   end
